@@ -9,7 +9,12 @@
 ## Usage
 
 ```typescript
-import { check, isBetween, isLessThan, isNotUndefined, startsWith } from '@mmit/check';
+import { 
+    check, 
+    isBetween, 
+    isLessThan, 
+    isNotUndefined, 
+    startsWith } from '@mmit/check';
 
 const v1 = check(5).ifit(isNotUndefined).else(5);   // v1 = 5
 const v2 = check(3).ifit(isBetween(5, 10)).else(5); // v2 = 5
