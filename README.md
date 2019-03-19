@@ -18,7 +18,7 @@ export function isUsingDefaultPort(url: Url): boolean {
 // Looks much nicer!
 // parseInt get either a valid port or '' to parse        
 export function isUsingDefaultPort(url: Url): boolean {
-    const port: number = parseInt(check(url.port).ifit(isANumber).else(''), 10);
+    const port: number = parseInt(check(url.port).ifit(isANumber).else('80'), 10);
     ...
     }    
 ```    
