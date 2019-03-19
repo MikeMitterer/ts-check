@@ -5,6 +5,23 @@
 
     npm i @mmit/check
     yarn add @mmit/check
+    
+## Why?
+
+```typescript
+export function isUsingDefaultPort(url: Url): boolean {
+    // port can be undefined, WS complains about this
+    const port: number = parseInt(url.port, 10);
+    ...
+    }
+
+// Looks much nicer!
+// parseInt get either a valid port or '' to parse        
+export function isUsingDefaultPort(url: Url): boolean {
+    const port: number = parseInt(check(url.port).ifit(isANumber).else(''), 10);
+    ...
+    }    
+```    
 
 ## Usage
 
@@ -14,13 +31,17 @@ import {
     isBetween, 
     isLessThan, 
     isNotUndefined, 
-    startsWith } from '@mmit/check';
+    startsWith,
+    isANumber } from '@mmit/check';
 
 const v1 = check(5).ifit(isNotUndefined).else(5);   // v1 = 5
 const v2 = check(3).ifit(isBetween(5, 10)).else(5); // v2 = 5
 const v3 = check(3).ifit(isBetween(3, 4)).else(5); //  v3 = 3
 const v4 = check(3).ifit(isLessThan(10)).else(10); //  v4 = 10
-const v5 = check('Test').ifit(startsWith('M')).else('<undefined>'); // v5 = '<undefined>'  
+const v5 = check('Test').ifit(startsWith('M')).else('<undefined>'); // v5 = '<undefined>'
+
+const url: Url = new URL('http://www.mikemitterer.at');
+const port = parseInt(check(url.port).ifit(isANumber).else('80'), 10 )
 ```
 
 It is quite easy to write your own `Verifyer`:

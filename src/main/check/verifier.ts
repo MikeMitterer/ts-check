@@ -21,3 +21,5 @@ export const isBetween: (min: number, max: number) => Verifier<number> = (
 ) => (value) => {
     return typeof value === 'number' && value >= min && value <= max;
 };
+
+export const isANumber: Verifier<unknown> = (value) => !isNaN(parseInt(`${value}`, 10));
