@@ -1,0 +1,40 @@
+{
+    "extends": ["tslint:recommended", "tslint-override"],
+
+    "rules": {
+        // "no-console": false
+        "no-trailing-whitespace": {
+            "severity": "off"
+        },
+        "one-line": [true, "check-catch", "check-finally", "check-open-brace", "check-whitespace"],
+        "quotemark": false,
+        "explicit-override": [true, "decorator"],
+        "object-literal-sort-keys": false,
+        "no-any": true,
+
+        "interface-name": [false, "always-prefix"],
+
+        "class-name": false,
+
+        "no-null-keyword": true,
+
+        "max-classes-per-file": false,
+
+        "member-ordering": [
+            true,
+            {
+                "order": [
+                    "public-static-field",
+                    "private-static-field",
+                    "private-instance-field",
+                    "public-instance-field",
+                    "public-constructor",
+                    "private-constructor",
+                    "public-instance-method",
+                    "protected-instance-method",
+                    "private-instance-method"
+                ]
+            }
+        ]
+    }
+}

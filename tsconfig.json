@@ -1,0 +1,19 @@
+// -------------------------------------------------------------------------------------------------
+// Dient im Prinzip nur für die IDE. Hier werden noch zusätzlich (im Vergleich zur .lib.-Version
+// Browserspezifische files eingebunden.
+
+// Weitere Infos:
+//    https://marcobotto.com/blog/compiling-and-bundling-typescript-libraries-with-webpack/
+//
+{
+    "extends": "./tsconfig.lib",
+    "include": [
+        // Damit werden die images erkannt
+        "src/browser/**/*.ts",
+        "src/site/images/typings.d.ts",
+        "src/site/images",
+
+        // Einbinder der TEST-Files
+        "src/test/**/*.ts"
+    ]
+}
