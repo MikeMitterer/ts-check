@@ -65,16 +65,12 @@ pipeline {
         }
 
         stage('Check-Var') {
+            // 0 - changed, 1 - unchanged
+            when { expression { SRC_CHANGED == 1 }}
             steps {
                 ansiColor('xterm') {
                     // check exit code
                     sh "echo \"exit code is : ${rc}\""
-
-                    // 0 - changed
-                    // 1 - unchanged
-                    // SRC hat sich geändert
-                    if (SRC_CHANGED == 0) {
-                    }
                 }
             }
         }
