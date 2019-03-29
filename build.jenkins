@@ -42,7 +42,7 @@ pipeline {
             steps {
                 timeout(time: 15, unit: 'MINUTES') {
                     ansiColor('xterm') {
-                        sh 'pub2npm.sh && yarn run pub && git push'
+                        sh 'pub2npm.sh --check && yarn run pub && git push origin HEAD:master'
                     }
                 }
 
