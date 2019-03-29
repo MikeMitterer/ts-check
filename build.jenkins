@@ -1,6 +1,8 @@
 pipeline {
    environment {
-     rc = "0"
+        // 0 - changed
+        // 1 - unchanged
+        SRC_CHANGED = "0"
     }
 
     agent {
@@ -47,17 +49,12 @@ pipeline {
                 timeout(time: 15, unit: 'MINUTES') {
                     ansiColor('xterm') {
                         script {
-                            rc = sh(script: "pub2npm.sh --check", returnStatus: true)
+                            // 0 - changed
+                            // 1 - unchanged
+                            SRC_CHANGED = sh(script: "pub2npm.sh --check", returnStatus: true)
 
-                            // check exit code
-                            // sh "echo \"exit code is : ${rc}\""
-
-                            if (rc != 0) {
-                                // SRC hat sich nicht geändert
-                                // ...
-                            }
-                            else {
-                                // SRC hat sich geändert
+                            // SRC hat sich geändert
+                            if (SRC_CHANGED == 0) {
                                 sh 'yarn run pub && git push origin HEAD:master'
                             }
                         }
@@ -72,6 +69,12 @@ pipeline {
                 ansiColor('xterm') {
                     // check exit code
                     sh "echo \"exit code is : ${rc}\""
+
+                    // 0 - changed
+                    // 1 - unchanged
+                    // SRC hat sich geändert
+                    if (SRC_CHANGED == 0) {
+                    }
                 }
             }
         }
