@@ -20,6 +20,12 @@ pipeline {
 
                         // Docker für die Integration-Tests starten
                         // sh 'docker/_ci/run.sh --start'
+
+                        script {
+                            // 0 - changed
+                            // 1 - unchanged
+                            SRC_CHANGED = sh(script: "pub2npm.sh --check", returnStatus: true)
+                        }
                     }
                 }
             }
@@ -44,33 +50,16 @@ pipeline {
 
             }
         }
+        
         stage('Publish') {
-            steps {
-                timeout(time: 15, unit: 'MINUTES') {
-                    ansiColor('xterm') {
-                        script {
-                            // 0 - changed
-                            // 1 - unchanged
-                            SRC_CHANGED = sh(script: "pub2npm.sh --check", returnStatus: true)
-
-                            // SRC hat sich geändert
-                            if (SRC_CHANGED == 0) {
-                                sh 'yarn run pub && git push origin HEAD:master'
-                            }
-                        }
-                    }
-                }
-
-            }
-        }
-
-        stage('Check-Var') {
             // 0 - changed, 1 - unchanged
-            when { expression { SRC_CHANGED == 1 }}
+            when { expression { SRC_CHANGED == 0 }}
             steps {
                 ansiColor('xterm') {
                     // check exit code
-                    sh "echo \"exit code is : ${SRC_CHANGED}\""
+                    // sh "echo \"exit code is : ${SRC_CHANGED}\""
+
+                    sh 'yarn run pub && git push origin HEAD:master'
                 }
             }
         }
