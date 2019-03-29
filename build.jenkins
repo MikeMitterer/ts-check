@@ -53,7 +53,7 @@ pipeline {
         
         stage('Publish') {
             // 1 - changed, 0 - unchanged
-            when { expression { SRC_CHANGED == 1 }}
+            when { expression { SRC_CHANGED }}
             steps {
                 ansiColor('xterm') {
                     // check exit code
