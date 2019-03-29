@@ -24,7 +24,7 @@ pipeline {
                         script {
                             // 0 - changed
                             // 1 - unchanged
-                            SRC_CHANGED = sh(script: "pub2npm.sh --check", returnStatus: true)
+                            SRC_CHANGED = ! sh(script: "pub2npm.sh --check", returnStatus: true)
                         }
                     }
                 }
@@ -53,7 +53,7 @@ pipeline {
         
         stage('Publish') {
             // 0 - changed, 1 - unchanged
-            when { expression { SRC_CHANGED == 0 }}
+            when { expression { SRC_CHANGED == 1 }}
             steps {
                 ansiColor('xterm') {
                     // check exit code
