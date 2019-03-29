@@ -1,7 +1,7 @@
 pipeline {
    environment {
         // 0 - unchanged, 1 - changed
-        SRC_CHANGED = "1"
+        SRC_CHANGED=1
     }
 
     agent {
