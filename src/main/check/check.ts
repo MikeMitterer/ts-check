@@ -1,5 +1,5 @@
 /**
- * Provides syntax for checking a specific value...
+ * Provides syntax for checking a specific value
  *
  * @param value Value to be verified
  */
