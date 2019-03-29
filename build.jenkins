@@ -53,7 +53,7 @@ pipeline {
                         }
                         else {
                             // SRC hat sich geändert
-                            yarn run pub && git push origin HEAD:master'
+                            sh 'yarn run pub && git push origin HEAD:master'
                         }
                     }
                 }
