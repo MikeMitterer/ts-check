@@ -66,6 +66,16 @@ pipeline {
 
             }
         }
+
+        stage('Check-Var') {
+            steps {
+                ansiColor('xterm') {
+                    // check exit code
+                    // sh "echo \"exit code is : ${rc}\""
+                }
+            }
+        }
+
     }
 
     // post {
