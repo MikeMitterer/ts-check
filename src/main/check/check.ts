@@ -1,7 +1,6 @@
 /**
  * Provides syntax for checking a specific value
  *
- *
  * @param value Value to be verified
  */
 import { Verifier } from './verifier';
