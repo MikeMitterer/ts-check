@@ -23,3 +23,4 @@ src/**/*.js
 yarn-error.log
 doc
 doc/
+.prev.scrmd5
