@@ -1,7 +1,7 @@
 pipeline {
    environment {
         // 0 - unchanged, 1 - changed
-        SRC_CHANGED=1
+        SRC_CHANGED=true
     }
 
     agent {
@@ -53,6 +53,8 @@ pipeline {
         
         stage('Publish') {
             // 1 - changed, 0 - unchanged
+            // SRC_CHANGED wird aber zu true bzw. false
+            //   - check auf == 1 funkt nicht
             when { expression { SRC_CHANGED }}
             steps {
                 ansiColor('xterm') {
