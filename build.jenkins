@@ -50,7 +50,7 @@ pipeline {
                             rc = sh(script: "pub2npm.sh --check", returnStatus: true)
 
                             // check exit code
-                            sh "echo \"exit code is : ${rc}\""
+                            // sh "echo \"exit code is : ${rc}\""
 
                             if (rc != 0) {
                                 // SRC hat sich nicht geändert
