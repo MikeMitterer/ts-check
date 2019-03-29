@@ -42,7 +42,19 @@ pipeline {
             steps {
                 timeout(time: 15, unit: 'MINUTES') {
                     ansiColor('xterm') {
-                        sh 'pub2npm.sh --check && yarn run pub && git push origin HEAD:master'
+                        rc = sh(script: "pub2npm.sh --check", returnStatus: true)
+
+                        // check exit code
+                        sh "echo \"exit code is : ${rc}\""
+
+                        if (rc != 0) {
+                            // SRC hat sich nicht geändert
+                            // ...
+                        }
+                        else {
+                            // SRC hat sich geändert
+                            yarn run pub && git push origin HEAD:master'
+                        }
                     }
                 }
 
