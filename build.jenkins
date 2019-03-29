@@ -42,6 +42,7 @@ pipeline {
                     ansiColor('xterm') {
                         sh 'yarn run clean'
                         sh 'yarn run deploy'
+                        sh "echo \"exit code is : ${SRC_CHANGED}\""
                         // sh 'yarn run deploy:node'
                         // sh 'yarn run deploy:web:prod'
                     }
