@@ -70,7 +70,7 @@ pipeline {
             steps {
                 ansiColor('xterm') {
                     // check exit code
-                    sh "echo \"exit code is : ${rc}\""
+                    sh "echo \"exit code is : ${SRC_CHANGED}\""
                 }
             }
         }
