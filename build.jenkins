@@ -38,6 +38,16 @@ pipeline {
 
             }
         }
+        stage('Publish') {
+            steps {
+                timeout(time: 15, unit: 'MINUTES') {
+                    ansiColor('xterm') {
+                        sh 'pub2npm.sh && yarn run pub && git push'
+                    }
+                }
+
+            }
+        }
     }
 
     // post {
