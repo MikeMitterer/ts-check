@@ -1,8 +1,7 @@
 pipeline {
    environment {
-        // 0 - changed
-        // 1 - unchanged
-        SRC_CHANGED = "0"
+        // 0 - unchanged, 1 - changed
+        SRC_CHANGED = "1"
     }
 
     agent {
@@ -22,8 +21,8 @@ pipeline {
                         // sh 'docker/_ci/run.sh --start'
 
                         script {
-                            // 0 - changed
-                            // 1 - unchanged
+                            // 0 - unchanged, 1 - changed
+                            // Script-Logik wird mit ! umgekehrt
                             SRC_CHANGED = ! sh(script: "pub2npm.sh --check", returnStatus: true)
                         }
                     }
@@ -52,7 +51,7 @@ pipeline {
         }
         
         stage('Publish') {
-            // 0 - changed, 1 - unchanged
+            // 1 - changed, 0 - unchanged
             when { expression { SRC_CHANGED == 1 }}
             steps {
                 ansiColor('xterm') {
