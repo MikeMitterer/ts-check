@@ -44,7 +44,7 @@ pipeline {
                         sh 'yarn run deploy'
 
                         // Nur zum Testen von SRC_CHANGED
-                        sh "echo \"exit code is : ${SRC_CHANGED}\""
+                        // sh "echo \"exit code is : ${SRC_CHANGED}\""
                         
                         // sh 'yarn run deploy:node'
                         // sh 'yarn run deploy:web:prod'
