@@ -12,7 +12,7 @@ pipeline {
             steps {
                 timeout(time: 15, unit: 'MINUTES') {
                     ansiColor('xterm') {
-                        sh 'yarn'
+                        sh 'yarn upgrade'
 
                         // Repos von Amazon holen
                         // sh 'docker/_ci/run.sh --pull'
@@ -23,7 +23,7 @@ pipeline {
                         script {
                             // 0 - unchanged, 1 - changed
                             // Script-Logik wird mit ! umgekehrt
-                            SRC_CHANGED = ! sh(script: "pub2npm.sh --check", returnStatus: true)
+                            SRC_CHANGED = ! sh(script: "srcchanged.sh --check", returnStatus: true)
                         }
                     }
                 }
