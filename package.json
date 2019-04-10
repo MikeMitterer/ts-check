@@ -17,7 +17,7 @@
     "gen:barrels": "barrelsby --delete -d src/main/",
     "start": "NODE_ENV=development webpack-dev-server --config webpack.web.js --mode development --open",
     "build": "rm -rf lib && yarn run build:ts",
-    "build:ts": "tsc --rootDir src/main --project tsconfig.lib.json --declaration --outDir lib",
+    "build:ts": "tsc --rootDir $(pwd)/src/main --project tsconfig.lib.json --declaration --outDir $(pwd)/lib",
     "build:ts:watch": "tsc --rootDir src/main --declaration --outDir lib --watch",
     "build:types": "tsc --rootDir src/main --declaration --outDir lib --emitDeclarationOnly",
     "build:js": "babel src/main --out-dir lib --extensions \".ts,.tsx\" --source-maps",
