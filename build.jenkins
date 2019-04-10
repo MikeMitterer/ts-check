@@ -4,6 +4,10 @@ pipeline {
         SRC_CHANGED=true
     }
 
+    parameters {
+        booleanParam(defaultValue: false, description: 'Publishes the module to NPMJS', name: 'PUBLISH_TO_NMP')
+    }
+
     agent {
         label 'linux'
     }
@@ -58,7 +62,11 @@ pipeline {
             // 1 - changed, 0 - unchanged
             // SRC_CHANGED wird aber zu true bzw. false
             //   - check auf == 1 funkt nicht
-            when { expression { SRC_CHANGED }}
+            when { anyOf {
+                        expression { SRC_CHANGED }
+                        expression { params.PUBLISH_TO_NMP }
+                        }
+                 }
             steps {
                 ansiColor('xterm') {
                     sh 'yarn run pub && git push origin HEAD:master'
