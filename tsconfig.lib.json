@@ -28,6 +28,7 @@
         "inlineSources": true,
         "noImplicitAny": true,
         "noImplicitThis": true,
+        "noImplicitReturns": true,
         "noUnusedParameters": true,
         "noUnusedLocals": true,
         "noEmitOnError": true,
