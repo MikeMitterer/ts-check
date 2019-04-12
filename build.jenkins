@@ -45,20 +45,20 @@ pipeline {
                 timeout(time: 15, unit: 'MINUTES') {
                     ansiColor('xterm') {
                         sh 'yarn run clean'
-                        sh 'yarn run deploy'
+                        sh 'yarn run build'
 
                         // Nur zum Testen von SRC_CHANGED
                         // sh "echo \"exit code is : ${SRC_CHANGED}\""
                         
-                        // sh 'yarn run deploy:node'
-                        // sh 'yarn run deploy:web:prod'
+                        // sh 'yarn run build:node'
+                        // sh 'yarn run build:web:prod'
                     }
                 }
 
             }
         }
         
-        stage('Publish') {
+        stage('Deploy') {
             // 1 - changed, 0 - unchanged
             // SRC_CHANGED wird aber zu true bzw. false
             //   - check auf == 1 funkt nicht
@@ -69,7 +69,7 @@ pipeline {
                  }
             steps {
                 ansiColor('xterm') {
-                    sh 'yarn run pub && git push origin HEAD:master'
+                    sh 'yarn run deploy && git push origin HEAD:master'
                 }
             }
         }
