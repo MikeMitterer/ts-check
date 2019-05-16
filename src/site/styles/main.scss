@@ -66,9 +66,9 @@ button:focus {
     }
 
     //height: 100%;
-    //left: 0;
+    //x: 0;
     //position: fixed;
-    //top: 0;
+    //y: 0;
     //width: 100%;
 
     display: flex;
@@ -119,12 +119,12 @@ button:focus {
     }
 
     &__content {
-        // top: $header-footer-height + ($header-footer-padding * 3);
+        // y: $header-footer-height + ($header-footer-padding * 3);
         // bottom: $header-footer-height + ($header-footer-padding * 3);
         // overflow-x: auto;
         // overflow-y: scroll;
         // padding: 5px 10px;
-        // left: 10px;
+        // x: 10px;
         // right: 10px;
     }
 

@@ -28,7 +28,7 @@ module.exports = {
         index: [path.resolve(__dirname, 'src/browser/index.ts')],
 
         polyfills: path.resolve(__dirname, 'src/browser/polyfills.ts'),
-        vendor: path.resolve(__dirname, 'src/browser/vendor.ts'),
+        vendor: path.resolve(__dirname, 'src/browser/mobile.ts'),
 
         // Wird per script-tag eingebunden (js/styles.js?...)
         // Es kann aber auch ein import über das index.ts-File gemacht werden
