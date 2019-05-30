@@ -16,7 +16,7 @@ pipeline {
             steps {
                 timeout(time: 15, unit: 'MINUTES') {
                     ansiColor('xterm') {
-                        sh 'yarn --silent install && yarn --silent upgrade'
+                        sh 'yarn'
 
                         // Repos von Amazon holen
                         // sh 'docker/_ci/run.sh --pull'
