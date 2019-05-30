@@ -55,6 +55,7 @@ describe('valid.spec.ts', () => {
 
         expect(
             check(undefined)
+                // @ts-ignore
                 .ifit(isBetween(5, 10))
                 .else(-1),
         ).toBe(-1);
@@ -75,6 +76,7 @@ describe('valid.spec.ts', () => {
 
         expect(
             check(undefined)
+                // @ts-ignore
                 .ifit(isLessThan(10))
                 .else(11),
         ).toBe(11);
@@ -95,6 +97,7 @@ describe('valid.spec.ts', () => {
 
         expect(
             check(undefined)
+                // @ts-ignore
                 .ifit(startsWith('M'))
                 .else('<undefined>'),
         ).toBe('<undefined>');
@@ -115,6 +118,7 @@ describe('valid.spec.ts', () => {
 
         expect(
             check(undefined)
+                // @ts-ignore
                 .ifit(endsWith('e'))
                 .else('<undefined>'),
         ).toBe('<undefined>');
@@ -144,6 +148,7 @@ describe('valid.spec.ts', () => {
 
         try {
             check(undefined)
+                // @ts-ignore
                 .ifit(startsWith('M'))
                 .else(() => {
                     throw new TestException("Found 'undefined' value!");
