@@ -204,7 +204,7 @@ module.exports = {
 
         // Weitere Infos: https://github.com/jmblog/how-to-optimize-momentjs-with-webpack
         // load `moment/locale/en.js` and `moment/locale/de.js`
-        new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /en|de/),
+        // new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /en|de/),
 
         // new ExtractTextPlugin({
         //     filename: "[name].css"
