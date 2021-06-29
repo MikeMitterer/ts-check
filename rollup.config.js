@@ -14,7 +14,7 @@ const incrementalDependencyLoader = {
     // this is where the bundled javascript file will be put
     output: [{
         name,
-        dir: './lib',
+        dir: `./lib`,
         format: 'esm', // the preferred format
         // preserveModules: true,
         sourcemap: true,
@@ -39,10 +39,10 @@ const incrementalDependencyLoader = {
         }),
         typescript({
             typescript: require('typescript'),
-            module: 'esnext',
-            
-            declaration: true,
-            declarationDir: './lib/types/',
+            // module: 'esnext',
+            //
+            // declaration: true,
+            // declarationDir: './lib/types/',
             rootDir: './src/main',
             
             tsconfig: "tsconfig.lib.json",

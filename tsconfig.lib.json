@@ -15,9 +15,6 @@
 
         "target": "esnext",
 
-        "outDir": "./lib",
-        "rootDir": "./src",
-
         // commonjs, amd, system oder es6 (= es2015), esnext
         // - commonjs ist im Starter-Template von MS
         //
@@ -28,6 +25,12 @@
 
         "sourceMap": true,
         // "inlineSourceMap": true,
+        "declaration": true,
+
+        "outDir": "./lib",
+        // Muss ausgeschaltet sein sonst kommt
+        //      "TypeError: tests/unit/xxxx.ts: Emit skipped"
+        "rootDir": "./src",
 
         // Essentiell damit die source-maps im Browser funktionieren
         "inlineSources": true,
@@ -61,13 +64,10 @@
 
         "esModuleInterop": true,
 
-        // wird mit tsc erstellt
-        "declaration": true,
-
         // Hier landen die types - sonst kommen sie
         // ins outDir
         //
-        //"declarationDir" :               "dist",
+        // "declarationDir" :               "/types",
 
         "baseUrl": "./src",
         // "paths": {
