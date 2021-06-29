@@ -12,6 +12,7 @@
   "license": "MIT",
   "type-check": "tsc",
   "main": "./lib/index.js",
+  "types": "./lib/main/",
   "typings": "./lib/index.d.ts",
   "scripts": {
     "gen:barrels": "barrelsby --delete -d src/main/",
