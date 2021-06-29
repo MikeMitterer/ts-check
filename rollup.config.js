@@ -39,6 +39,13 @@ const incrementalDependencyLoader = {
         }),
         typescript({
             typescript: require('typescript'),
+            module: 'esnext',
+            
+            declaration: true,
+            declarationDir: './lib/types/',
+            rootDir: './src/main',
+            
+            tsconfig: "tsconfig.lib.json",
         }),
     ]
 };
