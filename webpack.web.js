@@ -63,6 +63,7 @@ module.exports = {
                 enforce: 'pre',
                 loader: 'tslint-loader',
             },
+            
             // {
             //     test: /\.ts?$/,
             //     // Hat probleme beim export (funkt nur einmal - dann ist Restart notwendig)
@@ -71,10 +72,50 @@ module.exports = {
             // },
 
             // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
-            { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
+            // Speed: ~3000ms (https://github.com/s-panferov/awesome-typescript-loader#loader-options)
+            // { test: /\.tsx?$/, loader: 'awesome-typescript-loader',
+            //     options: {
+            //         configFileName: path.resolve(__dirname, 'tsconfig.lib.json'),
+            //         useBabel: true,
+            //         babelCore: "@babel/core", // needed for Babel v7
+            // }},
+
+            // Speed: ~1000ms
+            // { test: /\.tsx?$/, use: [{ loader: 'babel-loader'}, { loader: 'ts-loader',
+            //      options: {
+            //          configFile: path.resolve(__dirname, 'tsconfig.lib.json'),
+            //          compilerOptions: {
+            //              incremental: true,
+            //          },
+            // }}], exclude: /node_modules/ },
+
+            // Speed: ~750ms
+            // { test: /\.tsx?$/, loader: 'ts-loader',
+            //      options: {
+            //          configFile: path.resolve(__dirname, 'tsconfig.lib.json')
+            // }},
+
+            // Speed: ~400ms
+            // (exclude: /node_modules/, am 27.2.2020 entfernt da es sonst Probleme mit
+            // dem coalescing-operator aus anderen Modulen gibt)
+            {
+                test: /\.(ts|js)x?$/,
+                exclude: /node_modules\/(?!(@mmit)\/).*/,
+                loader: 'babel-loader',
+                options: {
+                    cacheDirectory: true,
+                    // And replace .babelrc with babel.config.json...
+                    babelrc: false
+                }
+            },
 
             // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-            { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
+            {
+                enforce: 'pre',
+                test: /\.js$/,
+                loader: 'source-map-loader',
+                exclude: [/node_modules\/typescript-collections/]
+            },
 
             // {
             //       // Include ts, tsx, js, and jsx files.
