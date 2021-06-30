@@ -1,7 +1,7 @@
 {
   "name": "@mmit/check",
   "author": "Mike Mitterer",
-  "version": "0.2.18",
+  "version": "0.2.19",
   "description": "Type-safe way to check values in TS",
   "keywords": [
     "check",
