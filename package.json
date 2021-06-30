@@ -14,6 +14,7 @@
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
+    "clean": "rm -rf lib dist bin &&  rm -rf node_modules/@types/istanbul-reports && jest --clearCache",
     "gen:barrels": "barrelsby --delete -d src/main/",
     "start": "NODE_ENV=development webpack-dev-server --config webpack.web.js --mode development --open",
     "tc": "tsc --noEmit",
@@ -32,7 +33,6 @@
     "test:unit": "jest src/test/unit",
     "test:integration": "jest src/test/integration",
     "doc": "typedoc --out doc",
-    "clean": "rm -rf lib dist bin &&  rm -rf node_modules/@types/istanbul-reports && jest --clearCache",
     "prettier": "onchange './src/**/*.ts'  -- prettier --write {{changed}}"
   },
   "files": [
