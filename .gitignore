@@ -12,6 +12,8 @@ coverage
 
 tests/*.js
 tests/*.js.mappackage-lock.json
+!tests/jest.setup.*
+
 package-lock.json
 build/
 dist/
@@ -24,3 +26,4 @@ yarn-error.log
 doc
 doc/
 .prev.scrmd5
+.scrmd5

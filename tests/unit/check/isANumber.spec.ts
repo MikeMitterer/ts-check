@@ -1,8 +1,8 @@
 // import 'jest-extended';
 // import { loggerFactory } from '../../main/config/ConfigLog4j';
 
-import { URL, Url } from 'url';
-import { check, isANumber } from '../../../main';
+import { URL } from 'url';
+import { check, isANumber } from '../../../src/main';
 
 describe('isANumber.spec.ts', () => {
     // const logger = loggerFactory.getLogger('test.isANumber.spec.ts');
@@ -14,7 +14,7 @@ describe('isANumber.spec.ts', () => {
     // });
 
     test('isANumber', () => {
-        const url: Url = new URL('http://www.mikemitterer.at');
+        const url: URL = new URL('http://www.mikemitterer.at');
 
         expect(url.port).toBe('');
 

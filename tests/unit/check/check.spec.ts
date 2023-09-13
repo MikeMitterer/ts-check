@@ -1,5 +1,5 @@
 import 'jest-extended';
-import { check, endsWith, isBetween, isLessThan, isNotUndefined, startsWith } from '../../../main';
+import { check, endsWith, isBetween, isLessThan, isNotUndefined, startsWith } from '../../../src/main';
 import TestException from './TestException';
 // import { loggerFactory } from '../../main/config/ConfigLog4j';
 
