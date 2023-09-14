@@ -31,7 +31,7 @@ const incrementalDependencyLoader = {
             __buildVersion__: pkg.version
         }),
         typescript({
-            typescript: require('typescript'),
+            // typescript: require('typescript'),
             tsconfig: "tsconfig.lib.json",
             rootDir: './src/main',
             module: 'esnext',
