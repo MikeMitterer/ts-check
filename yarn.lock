@@ -2400,6 +2400,7 @@ __metadata:
     html-loader: "npm:^2.1.2"
     html-webpack-plugin: "npm:^5.3.2"
     html-webpack-string-replace-plugin: "npm:^1.1.0"
+    indexes-of: "npm:^1.0.1"
     jest: "npm:^29.6.4"
     jest-cli: "npm:^29.6.4"
     jest-extended: "npm:^2.0.0"
@@ -2422,6 +2423,7 @@ __metadata:
     ts-loader: "npm:^9.4.4"
     typedoc: "npm:^0.25"
     typescript: "npm:^5.2.2"
+    uniq: "npm:^1.0.1"
     url: "npm:^0.11.2"
     webpack: "npm:5.88.2"
     webpack-cli: "npm:5.1.4"
@@ -6657,6 +6659,13 @@ __metadata:
   version: 4.0.0
   resolution: "indent-string@npm:4.0.0"
   checksum: cd3f5cbc9ca2d624c6a1f53f12e6b341659aba0e2d3254ae2b4464aaea8b4294cdb09616abbc59458f980531f2429784ed6a420d48d245bcad0811980c9efae9
+  languageName: node
+  linkType: hard
+
+"indexes-of@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "indexes-of@npm:1.0.1"
+  checksum: 4f9799b1739a62f3e02d09f6f4162cf9673025282af7fa36e790146e7f4e216dad3e776a25b08536c093209c9fcb5ea7bd04b082d42686a45f58ff401d6da32e
   languageName: node
   linkType: hard
 
@@ -11178,6 +11187,13 @@ __metadata:
   version: 2.1.0
   resolution: "unicode-property-aliases-ecmascript@npm:2.1.0"
   checksum: 243524431893649b62cc674d877bd64ef292d6071dd2fd01ab4d5ad26efbc104ffcd064f93f8a06b7e4ec54c172bf03f6417921a0d8c3a9994161fe1f88f815b
+  languageName: node
+  linkType: hard
+
+"uniq@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "uniq@npm:1.0.1"
+  checksum: 8206535f83745ea83f9da7035f3b983fd6ed5e35b8ed7745441944e4065b616bc67cf0d0a23a86b40ee0074426f0607f0a138f9b78e124eb6a7a6a6966055709
   languageName: node
   linkType: hard
 
