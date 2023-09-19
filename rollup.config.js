@@ -4,7 +4,8 @@ import replace from '@rollup/plugin-replace'
 // import { nodeResolve } from '@rollup/plugin-node-resolve';
 // import commonjs from '@rollup/plugin-commonjs'
 
-import pkg from './package.json' // Convert CommonJS modules to ES6
+// Convert CommonJS modules to ES6
+import pkg from './package.json' assert { type: "json" };
 
 const name = "check"
 
