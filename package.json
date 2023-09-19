@@ -3,6 +3,7 @@
   "author": "Mike Mitterer",
   "version": "0.2.20",
   "description": "Type-safe way to check values in TS",
+  "type": "module",
   "keywords": [
     "check",
     "validate",
