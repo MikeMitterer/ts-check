@@ -23,7 +23,7 @@ function srcPath(subdir) {
 
 module.exports = {
     extends: [
-        path.resolve(__dirname, './webpack.web.local.js'),
+        path.resolve(__dirname, './webpack.web.local.cjs'),
     ],
     cache: devMode,
     // https://webpack.js.org/configuration/target/
