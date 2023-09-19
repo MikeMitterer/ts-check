@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# shellcheck disable=SC2034
+
 #------------------------------------------------------------------------------
 # Config for updateDevTemplates.sh, created on Mi 13 Sep 2023 14:13:16 CEST
 # Project-Type: ts
@@ -9,6 +11,7 @@
 # BASE_FOLDER="${DEV_LOCAL}/Templates/Production"
 
 # Names des Template-Folders
+
 TEMPLATE_FOLDER="TypeScript"
 
 # Der "Key" ist das Source-File und der "Value" ist das Remote-File
@@ -19,11 +22,11 @@ FILES_TO_COPY[".eslintrc.cjs"]=""
 FILES_TO_COPY[".npmignore"]=""
 FILES_TO_COPY[".gitignore"]=""
 
-FILES_TO_COPY["babel.config.js"]=""
+FILES_TO_COPY["babel.config.js"]="babel.config.cjs"
 FILES_TO_COPY["postcss.config.js"]=""
 FILES_TO_COPY["prettier.config.js"]=""
 
-FILES_TO_COPY["jest.config.lib.js"]="jest.config.js"
+FILES_TO_COPY["jest.config.lib.js"]="jest.config.cjs"
 
 FILES_TO_COPY["tsconfig.json"]=""
 FILES_TO_COPY["tsconfig.lib.json"]=""
@@ -36,7 +39,7 @@ FILES_TO_COPY["webpack.web.js"]=""
 FILES_TO_COPY["jest-puppeteer.config.js"]=""
 
 # Einfacher Installer für einige der Standard-Packages
-FILES_TO_COPY["setup/install.default.packages.sh"]="install.default.packages.sh"
+# FILES_TO_COPY["setup/install.default.packages.sh"]="install.default.packages.sh"
 
 # ------------------------------------------------------------
 # Updates
