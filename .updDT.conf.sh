@@ -56,6 +56,6 @@ FILES_TO_UPDATE["jest.setup.js"]="tests/jest.setup.js"
 #     echo "${GH_ORG_MANGO_LILA}" > .gitorg
 # erstellt.
 # Default ist GH_ORG_MM
-FILES_TO_UPDATE[".gitorg.mobiad"]=".gitorg"
+FILES_TO_UPDATE[".gitorg.mm"]=".gitorg"
 
 
