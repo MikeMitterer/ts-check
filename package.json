@@ -56,7 +56,7 @@
     "url": "https://github.com/MikeMitterer/ts-check"
   },
   "dependencies": {
-    "@mmit/logging": "^0.1.5"
+    "@mmit/logging": "0.1.13"
   },
   "devDependencies": {
     "@babel/cli": "^7.22.10",
@@ -65,9 +65,9 @@
     "@babel/preset-env": "^7.22.10",
     "@babel/preset-typescript": "^7.22.11",
     "@babel/runtime": "^7.22.11",
-    "@rollup/plugin-node-resolve": "^15.2.1",
-    "@rollup/plugin-replace": "^5.0.2",
-    "@rollup/plugin-typescript": "^11.1.3",
+    "@rollup/plugin-node-resolve": "15.2.1",
+    "@rollup/plugin-replace": "5.0.2",
+    "@rollup/plugin-typescript": "11.1.3",
     "@types/core-js": "^2.5.6",
     "@types/eslint": "^8",
     "@types/jest": "29.5.4",
@@ -107,7 +107,7 @@
     "postcss-loader": "^7.3.3",
     "postcss-preset-env": "^9.1.4",
     "process": "^0.11.10",
-    "rollup": "^3.29.2",
+    "rollup": "3.29.2",
     "sass": "~1.32",
     "sass-loader": "10",
     "semver": "^7.3.5",
@@ -122,8 +122,8 @@
     "url": "^0.11.2",
     "webpack": "5.88.2",
     "webpack-cli": "5.1.4",
-    "webpack-dev-server": "4.7.4",
-    "webpack-livereload-plugin": "^3.0.1",
-    "webpack-node-externals": "^3.0.0"
+    "webpack-dev-server": "4.15.1",
+    "webpack-livereload-plugin": "3.0.2",
+    "webpack-node-externals": "3.0.0"
   }
 }
